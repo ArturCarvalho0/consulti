@@ -12,7 +12,7 @@ Este projeto implementa um CRUD (Create, Read, Update, Delete) para o cadastro d
 
 2. Configure o servidor local XAMPP e certifique-se de que o Apache e o MySQL estejam em execução.
 
-3. Crie um banco de dados MySQL chamado `clientes` e importe o arquivo SQL fornecido (`teste-newm.sql`) que se encontra no diretório `configuration/teste-newm.sql` para criar a estrutura da tabela. (Enviado com 5 usuário de exemplo para teste)
+3. Crie um banco de dados MySQL chamado `clientes` e importe o arquivo SQL fornecido (`consulti.sql`) que se encontra no diretório `configuration/consulti.sql` para criar a estrutura da tabela. (Enviado com 5 usuário de exemplo para teste)
 
 4. Configure as credenciais de conexão ao banco de dados no arquivo `configuration/connect.php`.
 
