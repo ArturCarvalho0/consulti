@@ -18,7 +18,7 @@ Este projeto implementa um CRUD (Create, Read, Update, Delete) para o cadastro d
 
 ## Uso
 
-1. Abra o navegador e acesse `http://localhost/teste-newm/src/index.php`.
+1. Abra o navegador e acesse `http://localhost/consulti/src/index.php`.
 
 2. A partir daí, você poderá realizar as operações CRUD básicas para cadastrar, visualizar, atualizar e excluir clientes.
 
