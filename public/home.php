@@ -9,8 +9,8 @@ include('header.php');
     <?php require('../src/views/includes/viewUserModal.php')?>
   </div>
   <!-- Meu arquivo JS -->
-  <script src="/teste-newm/public/js/script.js"></script>
-  <script src="/teste-newm/public/js/index.global.min.js"></script>
+  <script src="/consulti/public/js/script.js"></script>
+  <script src="/consulti/public/js/index.global.min.js"></script>
 </body>
 
 </html>

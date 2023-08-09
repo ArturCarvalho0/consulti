@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
   <!-- Meu arquivo CSS -->
-  <link rel="stylesheet" href="/teste-newm/public/css/style.css">
+  <link rel="stylesheet" href="/consulti/public/css/style.css">
 </head>
 <!-- Link do cdn dos arquivos necessários para rodar o JS da página -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

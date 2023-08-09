@@ -3,7 +3,7 @@
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark navbar_content">
     <a href="/">
       <div class="d-flex justify-content-center align-items-center">
-        <img width="195px" height="65px" src="/teste-newm/public/assets/img/logo.png" alt="">
+        <img width="195px" height="65px" src="/consulti/public/assets/img/logo.png" alt="">
       </div>
     </a>
     <hr>

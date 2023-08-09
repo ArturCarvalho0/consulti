@@ -200,6 +200,7 @@ li.nav-item {
   border: none;
   color: #fff;
   font-size: 36px;
+  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
 }
 
 .add-patient {
@@ -213,6 +214,7 @@ li.nav-item {
   padding: 10px 20px;
   border: none;
   font-size: 36px;
+  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
 }
 
 .add-patient div:first-child {
@@ -227,6 +229,7 @@ li.nav-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
 }
 
 .icon-circle i {
