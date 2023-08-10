@@ -1,20 +1,20 @@
 <!-- Barra de navegação -->
 <div class="navbar">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark navbar_content">
-    <a href="/">
+    <a href="#">
       <div class="d-flex justify-content-center align-items-center">
         <img width="195px" height="65px" src="/consulti/public/assets/img/logo.png" alt="">
       </div>
     </a>
     <hr>
     <ul class="nav flex-column mb-auto">
-      <li class="nav-item nav-link mb-2">
-        <a href="http://localhost/consulti/src/index.php?pagina=pacientes" class="text-decoration-none item-props" aria-current="page">
+      <li id="patient-tab" class="nav-item nav-link mb-2">
+        <a href="http://localhost/consulti/src/index.php?pagina=pacientes"  class="text-decoration-none item-props" aria-current="page">
           <i class="fa-solid fa-user-large"></i> Pacientes
         </a>
       </li>
-      <li class="nav-item nav-link">
-        <a href="http://localhost/consulti/src/index.php?pagina=agenda" class="text-decoration-none item-props" aria-current="page">
+      <li id="calendar-tab" class="nav-item nav-link">
+        <a href="http://localhost/consulti/src/index.php?pagina=agenda"  class="text-decoration-none item-props" aria-current="page">
         <i class="fa-solid fa-calendar"></i> Agenda
         </a>
       </li>

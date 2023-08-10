@@ -5,7 +5,7 @@ $currentPage = isset($page) ? $page : 1;
 <div class="content">
   <div class="container-fluid">
     <div class="table-container">
-      <h1 class="table-title"> Lista de Clientes</h1>
+      <h1 class="table-title"> Lista de Pacientes</h1>
       <hr>
       <div class="d-flex justify-content-between align-items-center search-container">
         <div class="input-divider">
@@ -23,7 +23,7 @@ $currentPage = isset($page) ? $page : 1;
           </div>
         </div>
         <button class="btn btn-new-user" data-bs-toggle="modal" data-bs-target="#newUserModal">
-          <i class="fas fa-user-plus"></i> Novo Cliente
+          <i class="fas fa-user-plus"></i> Novo Paciente
         </button>
       </div>
       <div class="table-responsive rounded">
