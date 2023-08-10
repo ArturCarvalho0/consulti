@@ -41,7 +41,6 @@ li.nav-item {
 .table-container {
   background-color: #f8f9fa;
   max-height: 100%; /* Defina a altura máxima desejada */
-  overflow-y: auto;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -204,7 +203,7 @@ li.nav-item {
 }
 
 .add-patient {
-  background-color: #b7e1e3;
+  background-color: rgba(54, 153, 104, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,12 +212,17 @@ li.nav-item {
   border-radius: 12px;
   padding: 10px 20px;
   border: none;
+  color: #fff;
   font-size: 36px;
   box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
 }
 
 .add-patient div:first-child {
   flex-grow: 1;
+}
+
+.add-patient i {
+  color: #000;
 }
 
 .icon-circle {
@@ -234,4 +238,38 @@ li.nav-item {
 
 .icon-circle i {
   margin-left:5px;
+}
+
+.container-calendar {
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+.container-calendar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos para o cabeçalho do calendário */
+.fc-toolbar {
+  background-color: #333;
+  color: white;
+}
+
+/* Estilos para os dias da semana */
+.fc-day-header {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para os eventos no calendário */
+.fc-event {
+  background-color: #4263f4;
+  color: white;
+  border: none;
+}
+
+/* Estilos para a janela de pop-up de eventos */
+.fc-popover {
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

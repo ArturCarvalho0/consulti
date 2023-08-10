@@ -9,12 +9,12 @@
     <hr>
     <ul class="nav flex-column mb-auto">
       <li class="nav-item nav-link mb-2">
-        <a href="" class="text-decoration-none item-props" aria-current="page">
+        <a href="http://localhost/consulti/src/index.php?pagina=pacientes" class="text-decoration-none item-props" aria-current="page">
           <i class="fa-solid fa-user-large"></i> Pacientes
         </a>
       </li>
       <li class="nav-item nav-link">
-        <a href="" class="text-decoration-none item-props" aria-current="page">
+        <a href="http://localhost/consulti/src/index.php?pagina=agenda" class="text-decoration-none item-props" aria-current="page">
         <i class="fa-solid fa-calendar"></i> Agenda
         </a>
       </li>

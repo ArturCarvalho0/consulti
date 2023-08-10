@@ -9,6 +9,7 @@
 
   <!-- Meu arquivo CSS -->
   <link rel="stylesheet" href="/consulti/public/css/style.css">
+  <link rel="stylesheet" href="/consulti/public/css/main.css">
 </head>
 <!-- Link do cdn dos arquivos necessários para rodar o JS da página -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
