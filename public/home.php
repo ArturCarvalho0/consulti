@@ -25,13 +25,14 @@ if (!isset($_GET['pagina'])) {
   <script src="/consulti/public/js/script.js"></script>
   <script src="/consulti/public/js/main.js"></script>
   <script>
-    <?php 
-      if($pagina === "pacientes") {
-        echo "const botao = document.getElementById('patient-tab');";
-        echo "botao.classList.add('active');";
-      }else 
+    <?php
+    if ($pagina === "pacientes") {
+      echo "const botao = document.getElementById('patient-tab');";
+      echo "botao.classList.add('active');";
+    } else{
       echo "const botao = document.getElementById('calendar-tab');";
       echo "botao.classList.add('active');";
+    }
     ?>
   </script>
 </body>

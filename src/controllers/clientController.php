@@ -10,7 +10,7 @@ class clientsController
         $this->model = new clientModel();
     }
 
-    function getAll($page = 1, $perPage = 15)
+    function getAll($page = 1, $perPage = 13)
     {
         $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
         $totalRecords = $this->model->getTotalRecords();

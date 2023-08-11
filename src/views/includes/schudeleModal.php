@@ -44,11 +44,19 @@
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="durationInput" class="form-label">Duração</label>
-              <input type="text" class="form-control" id="durationInput" name="durationInput" placeholder="Digite a duração" required>
+              <label for="durationInput" class="form-label">Horário de fim</label>
+              <input type="time" class="form-control" id="durationInput" name="durationInput" placeholder="Digite a duração" required>
               <div class="invalid-feedback">
                 Por favor, digite a duração.
               </div>
+            </div>
+            <div class="mb-3">
+              <label for="urgencyInput" class="form-label">Matriz de Urgência</label>
+              <select class="form-select" id="urgencyInput" name="urgencyInput" required>
+                <option value="#99cc03">😃 Simples</option>
+                <option value="#ffa001">😐 Médio</option>
+                <option value="#ff4e4e">😢 Grave</option>
+              </select>
             </div>
 
           </div>
