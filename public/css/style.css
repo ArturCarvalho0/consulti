@@ -13,6 +13,15 @@
   width: 15%;
 }
 
+.nav-link {
+  color: rgb(197, 197, 197);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4e9abf;
+}
+
 .navbar_content {
   height: 100vh;
   width: 100%;
@@ -20,21 +29,44 @@
 
 li.nav-item {
   border-radius: 8px;
+  transition: background-color 0.3s ease;
+  padding: 12px 16px;
+  margin-bottom: 4px;
 }
 
 li.nav-item:hover {
-  background-color: #33373b;
+  background-color: #414549;
   cursor: pointer;
 }
 
 .nav-item .item-props {
   color: rgb(180, 180, 180);
   transition: color 0.5s ease;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .nav-item .item-props:hover {
   color: #4e9abf;
+  text-decoration: none;
 }
+
+.item-props i {
+  margin-right: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.item-props:hover i {
+  opacity: 1;
+}
+
+.active {
+  background-color: #454b52;
+  color: #00aecd;
+}
+
 
 .content {
   width: calc(100% - 15%);
@@ -87,6 +119,17 @@ li.nav-item:hover {
 .table th,
 .table td {
   border-top: none;
+}
+
+.circle-icon-user{
+  background-color: #3b3b3b;
+  width: 40px; 
+  height: 40px; 
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(101, 101, 101)
 }
 
 .search-input {
@@ -158,6 +201,18 @@ li.nav-item:hover {
   background-color: rgb(255, 36, 36);
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-role {
+  color: rgba(189, 187, 187, 0.7);
+  font-size: 14px;
+  margin-left: 5px;
+}
+
 .logout {
   width: 40px;
   text-align: center;
@@ -192,64 +247,72 @@ li.nav-item:hover {
   background-color: #286f98;
 }
 
+/* Ajustando tamanhos de botões e fontes */
 .actions-buttons {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.next-patient {
+.next-patient,
+.add-patient {
   background-color: #007b81;
-  width: 333px;
-  height: 133px;
-  border-radius: 12px;
+  width: 260px; /* Reduzindo o tamanho dos botões */
+  height: 100px; /* Reduzindo o tamanho dos botões */
+  border-radius: 10px;
   border: none;
   color: #fff;
-  font-size: 36px;
-  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
+  font-size: 24px; /* Reduzindo o tamanho da fonte */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer; /* Adicionando cursor de apontar para indicar que são clicáveis */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Adicionando efeito de hover para os botões */
+.next-patient:hover,
+.add-patient:hover {
+  background-color: #005f64;
+  transform: scale(1.05);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
 }
 
 .add-patient {
-  background-color: rgba(54, 153, 104, 0.6);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 333px;
-  height: 133px;
-  border-radius: 12px;
-  padding: 10px 20px;
-  border: none;
-  color: #fff;
-  font-size: 36px;
-  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
-}
-
-.add-patient div:first-child {
-  flex-grow: 1;
-}
-
-.add-patient i {
-  color: #000;
+  background-color: rgba(54, 153, 104, 0.8); /* Ajustando a transparência */
+  padding: 8px 16px; /* Reduzindo o espaçamento interno */
 }
 
 .icon-circle {
-  width: 100px;
-  height: 85px;
+  width: 60px; /* Reduzindo o tamanho do círculo */
+  height: 60px; /* Reduzindo o tamanho do círculo */
   border-radius: 50%;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 14px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
 }
 
 .icon-circle i {
-  margin-left: 5px;
+  margin: 0; /* Removendo margem para o ícone dentro do círculo */
+  color: #38414a;
 }
 
+/* Adicionando margem entre os botões */
+.actions-buttons > div {
+  margin-right: 10px;
+}
+
+/* Adicionando margem apenas ao último botão para separá-lo do canto direito */
+.actions-buttons > div:last-child {
+  margin-right: 0;
+}
 .container-calendar {
   overflow-y: auto;
-  max-height: 80%;
+  max-height: 86%;
   border-top: 5px solid  #262129;
   border-bottom: 5px solid  #262129;
 }
@@ -258,9 +321,6 @@ li.nav-item:hover {
   display: none;
 }
 
-.active {
-  background-color: #454b52;
-}
 
 #calendar {
   margin: 0 auto;

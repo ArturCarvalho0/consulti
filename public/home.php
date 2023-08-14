@@ -24,6 +24,8 @@ if (!isset($_GET['pagina'])) {
   <!-- Meu arquivo JS -->
   <script src="/consulti/public/js/script.js"></script>
   <script src="/consulti/public/js/main.js"></script>
+  <script src="/consulti/public/js/pt-br.js"></script>
+
   <script>
     <?php
     if ($pagina === "pacientes") {
