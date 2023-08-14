@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newUserForm" class="needs-validation" novalidate action="index.php?a=insertUser" method="post">
+        <form id="newScheduleForm" class="needs-validation" novalidate action="index.php?a=insertSchedule" method="post">
           <div class="mb-3">
             <label for="nameInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Digite o nome" required>
@@ -15,10 +15,17 @@
               Por favor, digite o nome do paciente.
             </div>
           </div>
+          <div class="mb-3">
+            <label for="consultationInput" class="form-label">Tipo de consulta</label>
+            <input type="text" class="form-control" id="consultationInput" name="consultationInput" placeholder="Digite o tipo de consulta" required>
+            <div class="invalid-feedback">
+              Por favor, digite o tipo de consulta.
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="birthInput" class="form-label">Data da Consulta</label>
-              <input type="date" class="form-control" id="birthInput" name="birthInput" required>
+              <label for="dateInput" class="form-label">Data da Consulta</label>
+              <input type="date" class="form-control" id="dateInput" name="dateInput" required>
               <div class="invalid-feedback">
                 Por favor, selecione a data da consulta.
               </div>
