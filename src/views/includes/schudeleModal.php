@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newScheduleForm" class="needs-validation" novalidate action="index.php?a=insertSchedule" method="post">
+        <form id="newScheduleForm" class="needs-validation" novalidate action="index.php?a=insertSchedule&c=a" method="post">
           <div class="mb-3">
             <label for="nameInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Digite o nome" required>

@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
     editable: true,
     selectable: true,
     select: function(info) {
-      $('#schudeleModal #dateInput').val(info.start.toLocaleDateString());
+      $('#schudeleModal #dateInput').val(info.start.toLocaleDate());
       $('#schudeleModal').modal('show');
     },
     dayMaxEvents: true, // allow "more" link when too many events
