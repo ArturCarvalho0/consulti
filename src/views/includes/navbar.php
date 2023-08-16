@@ -13,7 +13,7 @@
           <i class="fa-solid fa-user-large"></i> Pacientes
         </li>
       </a>
-      <a href="http://localhost/consulti/src/index.php?pagina=agenda" class="text-decoration-none item-props" aria-current="page">
+      <a href="http://localhost/consulti/src/index.php?pagina=agenda&c=a" class="text-decoration-none item-props" aria-current="page">
         <li id="calendar-tab" class="nav-item nav-link">
           <i class="fa-solid fa-calendar"></i> Agenda
         </li>

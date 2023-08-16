@@ -24,8 +24,14 @@ class agendaController
 
             $this->model->insertSchedule($nome, $consulta, $data_consulta, $profissional, $inicio, $fim, $color, $observacao);
 
-            header('Location: index.php');
+            header('Location: index.php?pagina=agenda&c=a');
             exit;
         }
+    }
+
+    function getAllSchedules() {
+        $resultSchedules = $this->model->getTotalRecords();
+
+        include __DIR__ . '/../../public/home.php';
     }
 }

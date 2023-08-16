@@ -30,4 +30,11 @@ class agendaModel extends Connect
 
     $stmt->execute();
   }
+
+  function getTotalRecords()
+  {
+    $sqlSelect = $this->connection->query("SELECT * FROM $this->table");
+    $resultQuery = $sqlSelect->fetchAll();
+    return $resultQuery;
+  }
 }

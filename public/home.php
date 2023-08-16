@@ -5,6 +5,7 @@ if (!isset($_GET['pagina'])) {
 } else {
   $pagina = $_GET['pagina'];
 }
+print_r($resultSchedules)
 ?>
 
 <body>
@@ -31,11 +32,46 @@ if (!isset($_GET['pagina'])) {
     if ($pagina === "pacientes") {
       echo "const botao = document.getElementById('patient-tab');";
       echo "botao.classList.add('active');";
-    } else{
+    } else {
       echo "const botao = document.getElementById('calendar-tab');";
       echo "botao.classList.add('active');";
     }
     ?>
+
+    // Calendário
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'pt-br',
+        headerToolbar: {
+          left: 'prevYear,prev,next,nextYear today',
+          center: 'title',
+          right: 'dayGridMonth,dayGridWeek,dayGridDay'
+        },
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        selectable: true,
+        select: function(info) {
+          $('#schudeleModal #dateInput').val(info.start.toLocaleDateString());
+          $('#schudeleModal').modal('show');
+        },
+        dayMaxEvents: true, // allow "more" link when too many events
+        events: [
+          <?php foreach ($resultSchedules as $Schedule) : ?>
+            {
+            title: '<?= $Schedule['nome'] ?>',
+            start: '<?= $Schedule['data'] . "T" .$Schedule['inicio']  ?>',
+            end: '<?= $Schedule['data'] . "T" .$Schedule['fim']  ?>',
+            color: '<?= $Schedule['color'] ?>'
+          },
+              <?php endforeach; ?>
+          
+        ]
+      });
+
+      calendar.render();
+    });
   </script>
 </body>
 

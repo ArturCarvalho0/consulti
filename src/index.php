@@ -7,11 +7,12 @@ if(!isset($_GET['c'])) {
 }else {
   $c = $_GET['c'];
 }
-$action = !empty($_GET['a']) ? $_GET['a'] : 'getAll';
 if($c == 'a'){
   $controller = new agendaController();
+  $action = !empty($_GET['a']) ? $_GET['a'] : 'getAllSchedules';
 }else {
   $controller = new clientsController();
+  $action = !empty($_GET['a']) ? $_GET['a'] : 'getAll';
 }
 
 $controller->{$action}();
