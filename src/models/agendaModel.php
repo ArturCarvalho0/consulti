@@ -31,6 +31,15 @@ class agendaModel extends Connect
     $stmt->execute();
   }
 
+  function getSchedule($id) {
+    $sql = "SELECT * FROM $this->table WHERE id = :id";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+  }
+
   function getTotalRecords()
   {
     $sqlSelect = $this->connection->query("SELECT * FROM $this->table");

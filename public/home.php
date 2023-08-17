@@ -5,7 +5,6 @@ if (!isset($_GET['pagina'])) {
 } else {
   $pagina = $_GET['pagina'];
 }
-print_r($resultSchedules)
 ?>
 
 <body>
@@ -19,6 +18,7 @@ print_r($resultSchedules)
     }
     ?>
     <?php require('../src/views/includes/schudeleModal.php') ?>
+    <?php require('../src/views/includes/viewSchudeleModal.php') ?>
     <?php require('../src/views/includes/newUserModal.php') ?>
     <?php require('../src/views/includes/viewUserModal.php') ?>
   </div>
@@ -60,6 +60,7 @@ print_r($resultSchedules)
         events: [
           <?php foreach ($resultSchedules as $Schedule) : ?>
             {
+            id : '<?= $Schedule['id'] ?>',
             title: '<?= $Schedule['nome'] ?>',
             start: '<?= $Schedule['data'] . "T" .$Schedule['inicio']  ?>',
             end: '<?= $Schedule['data'] . "T" .$Schedule['fim']  ?>',
@@ -67,7 +68,32 @@ print_r($resultSchedules)
           },
               <?php endforeach; ?>
           
-        ]
+        ],
+        eventClick: function(info) {
+            var eventId = info.event.id;
+            console.log('ID do evento clicado:', eventId);
+            $('#viewSchudeleModal').modal('show');
+            $.ajax({
+                type: 'GET',
+                url: 'index.php?a=getSchedule&c=a',
+                data: { id: eventId },
+                success: function(response) {
+                  $("#nameInput").val(response.nome);
+                  $("#consultationInput").val(response.consulta);
+                  $("#dateInput").val(response.data);
+                  $("#professionalInput").val(response.profissional);
+                  $("#startTimeInput").val(response.inicio);
+                  $("#durationInput").val(response.fim);
+                  $("#urgencyInput").val(response.color);
+                  $("#noteInput").val(response.observacao);
+                    console.log('Resposta da controller:', response);
+                },
+                error: function(xhr, status, error) {
+                    // Lidar com erros aqui
+                    console.error('Erro na requisição AJAX:', error);
+                }
+            });
+          }
       });
 
       calendar.render();

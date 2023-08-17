@@ -29,6 +29,16 @@ class agendaController
         }
     }
 
+    function getSchedule(){
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = $_GET['id'];
+            $schudele = $this->model->getSchedule($id);
+            header('Content-Type: application/json');
+            echo json_encode($schudele);
+            exit;
+        }
+    }
+
     function getAllSchedules() {
         $resultSchedules = $this->model->getTotalRecords();
 

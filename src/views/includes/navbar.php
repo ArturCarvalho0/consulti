@@ -30,7 +30,7 @@
           <span class="user-role">Dentista</span>
         </div>
       </div>
-      <a href="#" class="text-white text-decoration-none">
+      <a href="/consulti/src/views/includes/login.php" class="text-white text-decoration-none">
         <div class="logout">
           <span class="logout-icon">
             <i class="fas fa-sign-out-alt"></i>
