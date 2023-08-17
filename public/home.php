@@ -72,7 +72,7 @@ if (!isset($_GET['pagina'])) {
         eventClick: function(info) {
             var eventId = info.event.id;
             console.log('ID do evento clicado:', eventId);
-            $('#viewSchudeleModal').modal('show');
+            $('#schudeleModal').modal('show');
             $.ajax({
                 type: 'GET',
                 url: 'index.php?a=getSchedule&c=a',
