@@ -58,45 +58,71 @@ if (!isset($_GET['pagina'])) {
         },
         dayMaxEvents: true, // allow "more" link when too many events
         events: [
-          <?php foreach ($resultSchedules as $Schedule) : ?>
-            {
-            id : '<?= $Schedule['id'] ?>',
-            title: '<?= $Schedule['nome'] ?>',
-            start: '<?= $Schedule['data'] . "T" .$Schedule['inicio']  ?>',
-            end: '<?= $Schedule['data'] . "T" .$Schedule['fim']  ?>',
-            color: '<?= $Schedule['color'] ?>'
-          },
-              <?php endforeach; ?>
-          
+          <?php foreach ($resultSchedules as $Schedule) : ?> {
+              id: '<?= $Schedule['id'] ?>',
+              title: '<?= $Schedule['nome'] ?>',
+              start: '<?= $Schedule['data'] . "T" . $Schedule['inicio']  ?>',
+              end: '<?= $Schedule['data'] . "T" . $Schedule['fim']  ?>',
+              color: '<?= $Schedule['color'] ?>'
+            },
+          <?php endforeach; ?>
+
         ],
         eventClick: function(info) {
-            var eventId = info.event.id;
-            console.log('ID do evento clicado:', eventId);
-            $('#schudeleModal').modal('show');
-            $.ajax({
-                type: 'GET',
-                url: 'index.php?a=getSchedule&c=a',
-                data: { id: eventId },
-                success: function(response) {
-                  $("#nameInput").val(response.nome);
-                  $("#consultationInput").val(response.consulta);
-                  $("#dateInput").val(response.data);
-                  $("#professionalInput").val(response.profissional);
-                  $("#startTimeInput").val(response.inicio);
-                  $("#durationInput").val(response.fim);
-                  $("#urgencyInput").val(response.color);
-                  $("#noteInput").val(response.observacao);
-                    console.log('Resposta da controller:', response);
-                },
-                error: function(xhr, status, error) {
-                    // Lidar com erros aqui
-                    console.error('Erro na requisição AJAX:', error);
-                }
-            });
-          }
+          var eventId = info.event.id;
+          console.log('ID do evento clicado:', eventId);
+          $('#viewSchudeleModal').modal('show');
+          $.ajax({
+            type: 'GET',
+            url: 'index.php?a=getSchedule&c=a',
+            data: {
+              id: eventId
+            },
+            success: function(response) {
+              $("#viewIdInput").val(response.id);
+              $("#viewNameInput").val(response.nome);
+              $("#viewConsultationInput").val(response.consulta);
+              $("#viewDateInput").val(response.data);
+              $("#viewProfessionalInput").val(response.profissional);
+              $("#viewStartTimeInput").val(response.inicio);
+              $("#viewDurationInput").val(response.fim);
+              $("#viewUrgencyInput").val(response.color);
+              $("#viewNoteInput").val(response.observacao);
+              console.log('Resposta da controller:', response);
+            },
+            error: function(xhr, status, error) {
+              // Lidar com erros aqui
+              console.error('Erro na requisição AJAX:', error);
+            }
+          });
+        }
       });
 
       calendar.render();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const enableInputsButton = document.getElementById('enableInputsBtn');
+      const scheduleButton = document.getElementById('scheduleBtn');
+      const inputFields = document.querySelectorAll('#viewScheduleForm input, #viewScheduleForm select, #viewScheduleForm textarea');
+
+      enableInputsButton.addEventListener('click', function() {
+        for (const inputField of inputFields) {
+          inputField.removeAttribute('disabled');
+        }
+        scheduleButton.removeAttribute('disabled');
+        enableInputsButton.style.display = 'none';
+        scheduleButton.style.display = 'inline-block';
+      });
+
+      $('#viewSchudeleModal').on('hidden.bs.modal', function() {
+        for (const inputField of inputFields) {
+          inputField.setAttribute('disabled', 'disabled');
+        }
+        scheduleButton.setAttribute('disabled', 'disabled');
+        enableInputsButton.style.display = 'inline-block';
+        scheduleButton.style.display = 'none';
+      });
     });
   </script>
 </body>

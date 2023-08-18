@@ -40,6 +40,23 @@ class agendaModel extends Connect
     return $result;
   }
 
+  function updateSchedule($id, $nome, $consulta, $data_consulta, $profissional, $inicio, $fim, $color, $observacao) {
+    $sql = "UPDATE $this->table SET nome = :nome, consulta = :consulta, data = :data_consulta, profissional = :profissional, inicio = :inicio, fim = :fim, color = :color, observacao = :observacao WHERE id = :id";
+    $stmt = $this->connection->prepare($sql);
+  
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':consulta', $consulta);
+    $stmt->bindParam(':data_consulta', $data_consulta);
+    $stmt->bindParam(':profissional', $profissional);
+    $stmt->bindParam(':inicio', $inicio);
+    $stmt->bindParam(':fim', $fim);
+    $stmt->bindParam(':color', $color);
+    $stmt->bindParam(':observacao', $observacao);
+  
+    $stmt->execute();
+  }
+
   function getTotalRecords()
   {
     $sqlSelect = $this->connection->query("SELECT * FROM $this->table");

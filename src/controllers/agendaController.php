@@ -39,6 +39,27 @@ class agendaController
         }
     }
 
+    function updateSchedule()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $id = $_POST['viewIdInput'];
+            $nome = $_POST['viewNameInput'];
+            $consulta = $_POST['viewConsultationInput'];
+            $data_consulta = $_POST['viewDateInput'];
+            $profissional = $_POST['viewProfessionalInput'];
+            $inicio = $_POST['viewStartTimeInput'];
+            $fim = $_POST['viewDurationInput'];
+            $color = $_POST['viewUrgencyInput'];
+            $observacao = $_POST['viewNoteInput'];
+
+            $this->model->updateSchedule($id, $nome, $consulta, $data_consulta, $profissional, $inicio, $fim, $color, $observacao);
+
+            header('Location: index.php?pagina=agenda&c=a');
+            exit;
+        }
+    }
+
     function getAllSchedules() {
         $resultSchedules = $this->model->getTotalRecords();
 
