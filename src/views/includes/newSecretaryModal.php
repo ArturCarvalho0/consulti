@@ -58,31 +58,26 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="urgencyInput" class="form-label">Matriz de Urgência</label>
-              <select class="form-select" id="urgencyInput" name="urgencyInput" required>
-                <option value="#99cc03">😃 Simples</option>
-                <option value="#ffa001">😐 Médio</option>
-                <option value="#ff4e4e">😢 Grave</option>
-              </select>
+              <input type="text" class="form-control" value="secretaria" id="cargoInput" name="cargoInput" hidden>
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6 mb-3">
-                <label for="startTimeInput" class="form-label">Login</label>
-                <input type="text" class="form-control" id="startTimeInput" name="startTimeInput" placeholder="Digite seu Login" required>
-                <div class="invalid-feedback">
-                  Por favor, digite seu login.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="durationInput" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="durationInput" name="durationInput" placeholder="Digite sua senha" required>
-                <div class="invalid-feedback">
-                  Por favor, digite a sua senha.
-                </div>
+              <label for="startTimeInput" class="form-label">Login</label>
+              <input type="text" class="form-control" id="startTimeInput" name="startTimeInput" placeholder="Digite seu Login" required>
+              <div class="invalid-feedback">
+                Por favor, digite seu login.
               </div>
             </div>
+            <div class="col-md-6 mb-3">
+              <label for="durationInput" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="durationInput" name="durationInput" placeholder="Digite sua senha" required>
+              <div class="invalid-feedback">
+                Por favor, digite a sua senha.
+              </div>
+            </div>
+          </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-success">Agendar </button>
           </div>

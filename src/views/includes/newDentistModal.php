@@ -58,12 +58,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="urgencyInput" class="form-label">Matriz de Urgência</label>
-              <select class="form-select" id="urgencyInput" name="urgencyInput" required>
-                <option value="#99cc03">😃 Simples</option>
-                <option value="#ffa001">😐 Médio</option>
-                <option value="#ff4e4e">😢 Grave</option>
-              </select>
+              <input type="text" class="form-control" value="dentista" id="cargoInput" name="cargoInput" hidden>
             </div>
           </div>
           <hr>
