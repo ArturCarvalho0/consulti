@@ -13,13 +13,26 @@ if (!isset($_GET['pagina'])) {
     <?php
     if ($pagina === "pacientes") {
       require('../src/views/includes/tableContent.php');
-    } else {
+    } else if ($pagina === "dentistas"){
+      require('../src/views/includes/dentistsTableContent.php');
+    } else if ($pagina === "administradores") {
+      require('../src/views/includes/admTableContent.php');
+    } else if ($pagina === "secretarias") {
+      require('../src/views/includes/secretaryTableContent.php');
+    } else if ($pagina === "agenda") {
       require('../src/views/includes/calendar.php');
+    } else {
+      require('../src/views/includes/tableContent.php');
     }
+
+
     ?>
     <?php require('../src/views/includes/schudeleModal.php') ?>
     <?php require('../src/views/includes/viewSchudeleModal.php') ?>
     <?php require('../src/views/includes/newUserModal.php') ?>
+    <?php require('../src/views/includes/newDentistModal.php') ?>
+    <?php require('../src/views/includes/newSecretaryModal.php') ?>
+    <?php require('../src/views/includes/newAdmModal.php') ?>
     <?php require('../src/views/includes/viewUserModal.php') ?>
   </div>
   <!-- Meu arquivo JS -->
