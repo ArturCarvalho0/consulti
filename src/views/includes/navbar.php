@@ -18,6 +18,28 @@
           <i class="fa-solid fa-calendar"></i> Agenda
         </li>
       </a>
+      <a href="#" class="text-decoration-none item-props" aria-current="page" id="employees-tab">
+        <li class="nav-item nav-link">
+          <i class="fa-solid fa-clipboard-user"></i> Funcionários
+        </li>
+      </a>
+      <ul class="submenu" id="submenu-employees">
+        <a href="#" class="text-decoration-none item-props">
+          <li class="nav-item nav-link">
+            <i class="fa-solid fa-user-md"></i> Dentista
+          </li>
+        </a>
+        <a href="#" class="text-decoration-none item-props">
+          <li class="nav-item nav-link">
+            <i class="fa-solid fa-user-cog"></i> Administrador
+          </li>
+        </a>
+        <a href="#" class="text-decoration-none item-props">
+          <li class="nav-item nav-link">
+            <i class="fa-solid fa-user-secret"></i> Secretária
+          </li>
+        </a>
+      </ul>
     </ul>
     <hr>
     <div class="d-flex justify-content-between align-items-center text-white text-decoration-none">
@@ -40,3 +62,28 @@
     </div>
   </div>
 </div>
+<script>
+const employeesTab = document.getElementById('employees-tab');
+const submenuEmployees = document.getElementById('submenu-employees');
+
+// Inicialmente, ocultar o submenu
+submenuEmployees.style.opacity = '0';
+submenuEmployees.style.pointerEvents = 'none';
+
+employeesTab.addEventListener('click', function(event) {
+  event.preventDefault(); // Impede o redirecionamento do link
+
+  // Alternar a exibição do submenu com transição suave
+  if (submenuEmployees.style.opacity === '1') {
+    submenuEmployees.style.opacity = '0';
+    submenuEmployees.style.pointerEvents = 'none';
+  } else {
+    // Calcular a posição para exibir o submenu logo abaixo do item de menu
+    const rect = employeesTab.getBoundingClientRect();
+    submenuEmployees.style.top = rect.bottom + 'px';
+    submenuEmployees.style.left = rect.left + 'px';
+    submenuEmployees.style.opacity = '1';
+    submenuEmployees.style.pointerEvents = 'auto';
+  }
+});
+</script>

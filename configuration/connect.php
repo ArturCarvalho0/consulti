@@ -1,7 +1,7 @@
 <?php
 
   define('HOST', 'localhost');
-  define('DATABASENAME', 'teste-newm');
+  define('DATABASENAME', 'consulti');
   define('USER', 'root');
   define('PASSWORD', '');
 

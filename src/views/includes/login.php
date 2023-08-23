@@ -164,7 +164,7 @@
         <legend><b>Tela de Login</b></legend>
         <br>
         <div class="Logo">
-            <img src="logo.png" alt="">
+            <img src="../../../public/assets/img/logo.png" alt="">
         </div>  
         <br><br>
 
