@@ -3,53 +3,60 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newUserModalLabel"><i class="fa-solid fa-user-md"></i> Cadastrar Dentista</h5>
+        <h5 class="modal-title" id="newUserModalLabel"><i class="fa-solid fa-user-md"></i> Cadastrar dentista</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newScheduleForm" class="needs-validation" novalidate action="index.php?a=insertNewEmployee&c=a" method="post">
+        <form id="newDentistForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=e" method="post">
           <div class="mb-3">
-            <label for="dentistNameInput" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Digite o nome" required>
+            <label for="employeeNameInput" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="employeeNameInput" name="employeeNameInput" placeholder="Digite o nome" required>
             <div class="invalid-feedback">
               Por favor, digite o nome.
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="dentistDateInput" class="form-label">Data de Nascimento</label>
-              <input type="date" class="form-control" id="dentistDateInput" name="dentistDateInput" required>
+              <label for="employeeDateInput" class="form-label">Data de Nascimento</label>
+              <input type="date" class="form-control" id="employeeDateInput" name="employeeDateInput" required>
               <div class="invalid-feedback">
                 Por favor, selecione a data de nascimento.
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dentistCPFInput" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="dentistCPFInput" name="dentistCPFInput" required placeholder="Digite o CPF">
+              <label for="employeeCPFInput" class="form-label">CPF</label>
+              <input type="text" class="form-control" id="employeeCPFInput" name="employeeCPFInput" required placeholder="Digite o CPF">
               <div class="invalid-feedback">
                 Por favor, digite o CPF.
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dentistCROInput" class="form-label">CRO</label>
-              <input type="text" class="form-control" id="dentistCROInput" name="dentistCROInput" placeholder="Digite o CRO" required>
+              <label for="employeeCROInput" class="form-label">CRO</label>
+              <input type="text" class="form-control" id="employeeCROInput" name="employeeCROInput" placeholder="Digite o CRO" required>
               <div class="invalid-feedback">
                 Por favor, digite o CRO.
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dentistPhoneInput" class="form-label">Celular</label>
-              <input type="text" class="form-control" id="dentistPhoneInput" name="dentistPhoneInput" placeholder="Digite o celular" required>
+              <label for="employeePhoneInput" class="form-label">Celular</label>
+              <input type="text" class="form-control" id="employeePhoneInput" name="employeePhoneInput" placeholder="Digite o celular" required>
               <div class="invalid-feedback">
                 Por favor, digite o celular.
               </div>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" value="dentista" id="cargoInput" name="cargoInput" hidden>
+            <label for="employeeAddressInput" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="employeeAddressInput" name="employeeAddressInput" placeholder="Digite o endereço" required>
+            <div class="invalid-feedback">
+              Por favor, digite o endereço.
+            </div>
+          </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" value="dentista" id="employeeCargoInput" name="employeeCargoInput" hidden>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dentistEmailInput" class="form-label">Email</label>
-              <input type="text" class="form-control" id="dentistEmailInput" name="dentistEmailInput" placeholder="Digite o email" required>
+              <label for="employeeEmailInput" class="form-label">Email</label>
+              <input type="text" class="form-control" id="employeeEmailInput" name="employeeEmailInput" placeholder="Digite o email" required>
               <div class="invalid-feedback">
                 Por favor, digite o email.
               </div>
@@ -59,15 +66,15 @@
           <hr>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="dentistLoginInput" class="form-label">Login</label>
-              <input type="text" class="form-control" id="dentistLoginInput" name="dentistLoginInput" placeholder="Digite seu Login" required>
+              <label for="employeeLoginInput" class="form-label">Login</label>
+              <input type="text" class="form-control" id="employeeLoginInput" name="employeeLoginInput" placeholder="Digite seu Login" required>
               <div class="invalid-feedback">
                 Por favor, digite seu login.
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="dentistPasswordInput" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="dentistPasswordInput" name="dentistPasswordInput" placeholder="Digite sua senha" required>
+              <label for="employeePasswordInput" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="employeePasswordInput" name="employeePasswordInput" placeholder="Digite sua senha" required>
               <div class="invalid-feedback">
                 Por favor, digite a sua senha.
               </div>
