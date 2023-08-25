@@ -5,8 +5,10 @@ $currentPage = isset($page) ? $page : 1;
 <div class="content">
   <div class="container-fluid">
     <div class="table-container">
-      <h1 class="table-title"> Lista de Secretárias</h1>
-      <hr>
+      <div class="table-container-title">
+        <h1 class="table-title"><i class="fa-solid fa-user-secret"></i> Lista de Secretárias</h1>
+      </div>
+      <div class="table-container-body">
       <div class="d-flex justify-content-between align-items-center search-container">
         <div class="input-divider">
           <div class="input-group">
@@ -43,7 +45,7 @@ $currentPage = isset($page) ? $page : 1;
           <tbody>
             <?php if (empty($resultData)) : ?>
               <tr>
-                <td colspan="9" class="text-center">Não há registros de clientes. <i class="fa-regular fa-face-sad-tear"></i></td>
+                <td colspan="9" class="text-center">Não há registros de secretárias. <i class="fa-regular fa-face-sad-tear"></i></td>
               </tr>
             <?php else : ?>
               <?php foreach ($resultData as $data) : ?>
@@ -59,7 +61,7 @@ $currentPage = isset($page) ? $page : 1;
                     <div class="action-btn d-flex justify-content-between ">
                       <button class="btn btn-primary" onclick="getUserDetails(<?= $data['id'] ?>, 'visualizacao')" data-id="<?= $data['id'] ?>"><i class="fa-solid fa-eye"></i></button>
                       <button class="btn btn-success btn-edit-user" data-id="<?= $data['id'] ?>" onclick="getUserDetails(<?= $data['id'] ?>, 'edicao')"><i class="fas fa-pencil-alt"></i></button>
-                      <button class="btn btn-danger" onclick="confirmDelete(<?php echo $data['id']; ?>)"><i class="fa-solid fa-trash"></i></button>
+                      <button class="btn btn-danger" onclick="confirmDeleteEmployee(<?php echo $data['id']; ?>)"><i class="fa-solid fa-trash"></i></button>
                     </div>
                   </td>
                 </tr>
@@ -94,6 +96,9 @@ $currentPage = isset($page) ? $page : 1;
           </ul>
         </nav>
       </div>
+      </div>
+      
+      
     </div>
   </div>
 </div>

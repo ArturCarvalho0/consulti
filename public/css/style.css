@@ -81,9 +81,36 @@ li.nav-item:hover {
 .table-container {
   background-color: #f8f9fa;
   max-height: 100%; /* Defina a altura máxima desejada */
-  padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
+  height: 95vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.table-container-title {
+  padding: 20px;
+  background-color: #212529;
+  border-radius: 10px 10px 0px 0px;
+  color: #d6d6d6;
+}
+
+.table-container-title-calendar {
+  background-color: #212529;
+  border-radius: 10px 10px 0px 0px;
+  color: #d6d6d6;
+}
+
+
+.table-container-body {
+  padding: 20px
+}
+
+.table-container-agenda {
+  background-color:#212529;
+  max-height: 100%; /* Defina a altura máxima desejada */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 20px;
   height: 95vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -100,7 +127,6 @@ li.nav-item:hover {
 .table-title {
   font-size: 40px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .table-dark {
@@ -252,6 +278,7 @@ li.nav-item:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .next-patient,
@@ -313,8 +340,9 @@ li.nav-item:hover {
 .container-calendar {
   overflow-y: auto;
   max-height: 86%;
-  border-top: 5px solid  #262129;
-  border-bottom: 5px solid  #262129;
+  border-width: 5px;
+  border-style: solid;
+  border-image: linear-gradient(45deg, rgb(32, 151, 230), rgb(80, 200, 72)) 1;
 }
 
 .container-calendar::-webkit-scrollbar {

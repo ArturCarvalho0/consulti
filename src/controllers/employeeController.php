@@ -63,4 +63,25 @@ class employeesController
             exit;
         }
     }
+
+    function getEmployee()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = $_GET['id'];
+            $user = $this->model->getEmployee($id);
+            header('Content-Type: application/json');
+            echo json_encode($user);
+            exit;
+        }
+    }
+
+    function deleteEmployee()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $this->model->deleteEmployee($id);
+            header('Location: index.php');
+            exit;
+        }
+    }
 }
