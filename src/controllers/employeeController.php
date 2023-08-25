@@ -10,6 +10,39 @@ class employeesController
         $this->model = new employeeModel();
     }
 
+    function getAllDentists($page = 1, $perPage = 13)
+    {
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $totalRecords = $this->model->getTotalDentists();
+        $totalPages = ceil($totalRecords / $perPage);
+        $offset = ($currentPage - 1) * $perPage;
+        $resultData = $this->model->getDentistsByPage($offset, $perPage);
+
+        include __DIR__ . '/../../public/home.php';
+    }
+
+    function getAllAdms($page = 1, $perPage = 13)
+    {
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $totalRecords = $this->model->getTotalAdms();
+        $totalPages = ceil($totalRecords / $perPage);
+        $offset = ($currentPage - 1) * $perPage;
+        $resultData = $this->model->getAdmsByPage($offset, $perPage);
+
+        include __DIR__ . '/../../public/home.php';
+    }
+
+    function getAllSecretariats($page = 1, $perPage = 13)
+    {
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $totalRecords = $this->model->getTotalSecretariats();
+        $totalPages = ceil($totalRecords / $perPage);
+        $offset = ($currentPage - 1) * $perPage;
+        $resultData = $this->model->getSecretariatsByPage($offset, $perPage);
+
+        include __DIR__ . '/../../public/home.php';
+    }
+
     function insertEmployee()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

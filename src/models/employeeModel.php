@@ -11,6 +11,48 @@
       $this->table = 'funcionarios';
     }
 
+    function getTotalDentists()
+    {
+      $sqlSelect = $this->connection->query("SELECT COUNT(*) as total FROM $this->table WHERE cargo = 'dentista'");
+      $result = $sqlSelect->fetch();
+      return $result['total'];
+    }
+
+    function getDentistsByPage($offset, $perPage)
+    {
+      $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE cargo = 'dentista' LIMIT $offset, $perPage");
+      $resultQuery = $sqlSelect->fetchAll();
+      return $resultQuery;
+    }
+
+    function getTotalAdms()
+    {
+      $sqlSelect = $this->connection->query("SELECT COUNT(*) as total FROM $this->table WHERE cargo = 'administrador'");
+      $result = $sqlSelect->fetch();
+      return $result['total'];
+    }
+
+    function getAdmsByPage($offset, $perPage)
+    {
+      $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE cargo = 'administrador' LIMIT $offset, $perPage");
+      $resultQuery = $sqlSelect->fetchAll();
+      return $resultQuery;
+    }
+
+    function getTotalSecretariats()
+    {
+      $sqlSelect = $this->connection->query("SELECT COUNT(*) as total FROM $this->table WHERE cargo = 'secretaria'");
+      $result = $sqlSelect->fetch();
+      return $result['total'];
+    }
+
+    function getSecretariatsByPage($offset, $perPage)
+    {
+      $sqlSelect = $this->connection->query("SELECT * FROM $this->table WHERE cargo = 'secretaria' LIMIT $offset, $perPage");
+      $resultQuery = $sqlSelect->fetchAll();
+      return $resultQuery;
+    }
+
     function insertUser($nome, $nascimento, $cpf, $cro, $telefone, $email, $endereco, $cargo, $login, $senha)
     {
       $sql = "INSERT INTO $this->table (nome, nascimento, cpf, cro, telefone, email, endereco, cargo, login, senha) 

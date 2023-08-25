@@ -53,7 +53,8 @@ $currentPage = isset($page) ? $page : 1;
                   <td><?= $data['nome'] ?></td>
                   <td><?= date('d/m/Y', strtotime($data['nascimento'])) ?></td>
                   <td class="text-center text-cpf"><?= $data['cpf'] ?></td>
-                  <td class="text-center text-phone"><?= $data['celular'] ?></td>
+                  <td class="text-center text-cro"><?= $data['cro'] ?></td>
+                  <td class="text-center text-phone"><?= $data['telefone'] ?></td>
                   <td><?= $data['email'] ?></td>
                   <td><?= $data['endereco'] ?></td>
                   <td>

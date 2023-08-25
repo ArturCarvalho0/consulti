@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newScheduleForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=e" method="post">
+        <form id="newAdmForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=e" method="post">
           <div class="mb-3">
             <label for="employeeNameInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="employeeNameInput" name="employeeNameInput" placeholder="Digite o nome" required>
@@ -45,15 +45,18 @@
               </div>
             </div>
             <div class="mb-3">
-            <label for="employeeAddressInput" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="employeeAddressInput" name="employeeAddressInput" placeholder="Digite o endereço" required>
-            <div class="invalid-feedback">
-              Por favor, digite o endereço.
+              <label for="employeeAddressInput" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="employeeAddressInput" name="employeeAddressInput" placeholder="Digite o endereço" required>
+              <div class="invalid-feedback">
+                Por favor, digite o endereço.
+              </div>
             </div>
-          </div>
-            <div class="mb-3">
+            <div>
               <input type="text" class="form-control" value="administrador" id="employeeCargoInput" name="employeeCargoInput" hidden>
             </div>
+          </div>
+          <div>
+            <input type="text" class="form-control" id="employeeCROInput" name="employeeCROInput" value="" hidden>
           </div>
           <hr>
           <div class="row">

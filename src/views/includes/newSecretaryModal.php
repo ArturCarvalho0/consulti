@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newSecretaryForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=a" method="post">
+        <form id="newSecretaryForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=e" method="post">
           <div class="mb-3">
             <label for="employeeNameInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="employeeNameInput" name="employeeNameInput" placeholder="Digite o nome" required>
@@ -45,11 +45,19 @@
               </div>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" value="secretaria" id="cargoInput" name="cargoInput" hidden>
+              <label for="employeeAddressInput" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="employeeAddressInput" name="employeeAddressInput" placeholder="Digite o endereço" required>
+              <div class="invalid-feedback">
+                Por favor, digite o endereço.
+              </div>
             </div>
-            
+            <div>
+              <input type="text" class="form-control" value="secretaria" id="employeeCargoInput" name="employeeCargoInput" hidden>
+            </div>
+            <div>
+              <input type="text" class="form-control" id="employeeCROInput" name="employeeCROInput" value="" hidden>
+            </div>
           </div>
-          
           <hr>
           <div class="row">
             <div class="col-md-6 mb-3">

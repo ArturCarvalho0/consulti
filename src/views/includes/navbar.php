@@ -24,17 +24,17 @@
         </li>
       </a>
       <ul class="submenu" id="submenu-employees">
-        <a href="http://localhost/consulti/src/index.php?pagina=dentistas" class="text-decoration-none item-props">
+        <a href="http://localhost/consulti/src/index.php?pagina=dentistas&c=e&e=d" class="text-decoration-none item-props">
           <li class="nav-item nav-link">
             <i class="fa-solid fa-user-md"></i> Dentista
           </li>
         </a>
-        <a href="http://localhost/consulti/src/index.php?pagina=administradores" class="text-decoration-none item-props">
+        <a href="http://localhost/consulti/src/index.php?pagina=administradores&c=e&e=a" class="text-decoration-none item-props">
           <li class="nav-item nav-link">
             <i class="fa-solid fa-user-cog"></i> Administrador
           </li>
         </a>
-        <a href="http://localhost/consulti/src/index.php?pagina=secretarias" class="text-decoration-none item-props">
+        <a href="http://localhost/consulti/src/index.php?pagina=secretarias&c=e&e=s" class="text-decoration-none item-props">
           <li class="nav-item nav-link">
             <i class="fa-solid fa-user-secret"></i> Secretária
           </li>
