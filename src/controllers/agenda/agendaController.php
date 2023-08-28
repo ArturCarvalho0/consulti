@@ -1,5 +1,5 @@
 <?php
-require('./models/agendaModel.php');
+require('./models/agenda/agendaModel.php');
 
 class agendaController
 {
@@ -63,6 +63,6 @@ class agendaController
     function getAllSchedules() {
         $resultSchedules = $this->model->getTotalRecords();
 
-        include __DIR__ . '/../../public/home.php';
+        include __DIR__ . '/../../../public/home.php';
     }
 }

@@ -1,7 +1,7 @@
 <?php
-require('./controllers/clientController.php');
-require('./controllers/agendaController.php');
-require('./controllers/employeeController.php');
+require('./controllers/client/clientController.php');
+require('./controllers/agenda/agendaController.php');
+require('./controllers/employee/employeeController.php');
 
 if(!isset($_GET['c'])) {
   $c = '';

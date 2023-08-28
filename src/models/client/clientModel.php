@@ -1,6 +1,6 @@
 <?php
 
-  require_once __DIR__ . '/../../configuration/connect.php';
+  require_once __DIR__ . '../../../../../consulti/configuration/connect.php';
 
   class clientModel extends Connect{
     private $table;

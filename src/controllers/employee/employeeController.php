@@ -1,5 +1,5 @@
 <?php
-require('./models/employeeModel.php');
+require('./models/employee/employeeModel.php');
 
 class employeesController
 {
@@ -18,7 +18,7 @@ class employeesController
         $offset = ($currentPage - 1) * $perPage;
         $resultData = $this->model->getDentistsByPage($offset, $perPage);
 
-        include __DIR__ . '/../../public/home.php';
+        include __DIR__ . '/../../../public/home.php';
     }
 
     function getAllAdms($page = 1, $perPage = 13)
@@ -29,7 +29,7 @@ class employeesController
         $offset = ($currentPage - 1) * $perPage;
         $resultData = $this->model->getAdmsByPage($offset, $perPage);
 
-        include __DIR__ . '/../../public/home.php';
+        include __DIR__ . '/../../../public/home.php';
     }
 
     function getAllSecretariats($page = 1, $perPage = 13)
@@ -40,7 +40,7 @@ class employeesController
         $offset = ($currentPage - 1) * $perPage;
         $resultData = $this->model->getSecretariatsByPage($offset, $perPage);
 
-        include __DIR__ . '/../../public/home.php';
+        include __DIR__ . '/../../../public/home.php';
     }
 
     function insertEmployee()

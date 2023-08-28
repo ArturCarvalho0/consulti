@@ -1,5 +1,5 @@
 <?php
-require('./models/clientModel.php');
+require('./models/client/clientModel.php');
 
 class clientsController
 {
@@ -18,7 +18,7 @@ class clientsController
         $offset = ($currentPage - 1) * $perPage;
         $resultData = $this->model->getByPage($offset, $perPage);
 
-        include __DIR__ . '/../../public/home.php';
+        include __DIR__ . '/../../../public/home.php';
     }
 
     function insertUser()

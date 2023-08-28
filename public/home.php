@@ -12,31 +12,31 @@ if (!isset($_GET['pagina'])) {
     <?php require('../src/views/includes/navbar.php') ?>
     <?php
     if ($pagina === "pacientes") {
-      require('../src/views/includes/tableContent.php');
+      require('../src/views/includes/client/tableContent.php');
     } else if ($pagina === "dentistas"){
-      require('../src/views/includes/dentistsTableContent.php');
+      require('../src/views/includes/employee/dentist/dentistsTableContent.php');
     } else if ($pagina === "administradores") {
-      require('../src/views/includes/admTableContent.php');
+      require('../src/views/includes/employee/administrator/admTableContent.php');
     } else if ($pagina === "secretarias") {
-      require('../src/views/includes/secretaryTableContent.php');
+      require('../src/views/includes/employee/secretary/secretaryTableContent.php');
     } else if ($pagina === "agenda") {
-      require('../src/views/includes/calendar.php');
+      require('../src/views/includes/agenda/calendar.php');
     } else {
-      require('../src/views/includes/tableContent.php');
+      require('../src/views/includes/client/tableContent.php');
     }
 
 
     ?>
-    <?php require('../src/views/includes/schudeleModal.php') ?>
-    <?php require('../src/views/includes/viewSchudeleModal.php') ?>
-    <?php require('../src/views/includes/newUserModal.php') ?>
-    <?php require('../src/views/includes/newDentistModal.php') ?>
-    <?php require('../src/views/includes/newSecretaryModal.php') ?>
-    <?php require('../src/views/includes/newAdmModal.php') ?>
-    <?php require('../src/views/includes/viewUserModal.php') ?>
-    <?php require('../src/views/includes/viewDentistModal.php') ?>
-    <?php require('../src/views/includes/viewAdmModal.php') ?>
-    <?php require('../src/views/includes/viewSecretaryModal.php') ?>
+    <?php require('../src/views/includes/agenda/schudeleModal.php') ?>
+    <?php require('../src/views/includes/agenda/viewSchudeleModal.php') ?>
+    <?php require('../src/views/includes/client/newUserModal.php') ?>
+    <?php require('../src/views/includes/employee/dentist/newDentistModal.php') ?>
+    <?php require('../src/views/includes/employee/secretary/newSecretaryModal.php') ?>
+    <?php require('../src/views/includes/employee/administrator/newAdmModal.php') ?>
+    <?php require('../src/views/includes/client/viewUserModal.php') ?>
+    <?php require('../src/views/includes/employee/dentist/viewDentistModal.php') ?>
+    <?php require('../src/views/includes/employee/administrator/viewAdmModal.php') ?>
+    <?php require('../src/views/includes/employee/secretary/viewSecretaryModal.php') ?>
   </div>
   <!-- Meu arquivo JS -->
   <script src="/consulti/public/js/script.js"></script>
