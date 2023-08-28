@@ -210,65 +210,69 @@ function getEmployeeDetails(employeeId, funcao = "") {
         $("#editDentistEmployeePasswordInput").val(response.senha);
 
         if (funcao == "edicao") {
-          $("#dentistModal").modal("show");
+          $("#editDentistModal").modal("show");
           document.getElementById("viewDentistModalLabel").innerHTML = " <i class='fa-solid fa-user-md'></i> Editar Dentista";
-          $("#dentistModal input").prop("disabled", false);
+          $("#editDentistModal input").prop("disabled", false);
           document.getElementById("editNoteInput").disabled = false;
           document.getElementById("salvarAlteracoesBtn").style.display =
             "block";
         } else {
-          $("#dentistModal").modal("show");
+          $("#editDentistModal").modal("show");
           document.getElementById("viewDentistModalLabel").innerHTML =
           "<i class='fa-solid fa-user-md'></i> Visualizar Dentista";
-          $("#dentistModal input").prop("disabled", true);
+          $("#editDentistModal input").prop("disabled", true);
           document.getElementById("editNoteInput").disabled = true;
           document.getElementById("salvarAlteracoesBtn").style.display = "none";
         }
-      } else if (response.cargo === "administrador") {
-        $("#editNameInput").val(response.nome);
-        $("#editBirthInput").val(response.nascimento);
-        $("#editCpfInput").val(response.cpf).mask("000.000.000-00");
-        $("#editPhoneInput").val(response.celular).mask("(00) 0000-0000");
-        $("#editEmailInput").val(response.email);
-        $("#editAddressInput").val(response.endereco);
-        $("#editNoteInput").val(response.observacao);
+      } else if (response.cargo == "administrador") {
+        $("#editAdmEmployeeNameInput").val(response.nome);
+        $("#editAdmEmployeeDateInput").val(response.nascimento);
+        $("#editAdmEmployeeCPFInput").val(response.cpf).mask("000.000.000-00");
+        $("#editAdmEmployeeCROInput").val(response.cro);
+        $("#editAdmEmployeePhoneInput").val(response.telefone).mask("(00) 0000-0000");
+        $("#editAdmEmployeeEmailInput").val(response.email);
+        $("#editAdmEmployeeAddressInput").val(response.endereco);
+        $("#editAdmEmployeeLoginInput").val(response.login);
+        $("#editAdmEmployeePasswordInput").val(response.senha);
 
         if (funcao == "edicao") {
-          $("#UserModal").modal("show");
-          document.getElementById("modalTitle").innerHTML = "Editar Dentista";
-          $("#UserModal input").prop("disabled", false);
+          $("#editAdmModal").modal("show");
+          document.getElementById("viewAdmModalLabel").innerHTML = "<i class='fa-solid fa-user-cog'> Editar Administrador";
+          $("#editAdmModal input").prop("disabled", false);
           document.getElementById("editNoteInput").disabled = false;
           document.getElementById("salvarAlteracoesBtn").style.display =
             "block";
         } else {
-          $("#UserModal").modal("show");
-          document.getElementById("modalTitle").innerHTML =
-            "Visualizar Cliente";
-          $("#UserModal input").prop("disabled", true);
+          $("#editAdmModal").modal("show");
+          document.getElementById("viewAdmModalLabel").innerHTML =
+            "<i class='fa-solid fa-user-cog'> Visualizar Administrador";
+          $("editAdmModal input").prop("disabled", true);
           document.getElementById("editNoteInput").disabled = true;
           document.getElementById("salvarAlteracoesBtn").style.display = "none";
         }
       } else {
-        $("#editNameInput").val(response.nome);
-        $("#editBirthInput").val(response.nascimento);
-        $("#editCpfInput").val(response.cpf).mask("000.000.000-00");
-        $("#editPhoneInput").val(response.celular).mask("(00) 0000-0000");
-        $("#editEmailInput").val(response.email);
-        $("#editAddressInput").val(response.endereco);
-        $("#editNoteInput").val(response.observacao);
+        $("#editSecretaryEmployeeNameInput").val(response.nome);
+        $("#editSecretaryEmployeeDateInput").val(response.nascimento);
+        $("#editSecretaryEmployeeCPFInput").val(response.cpf).mask("000.000.000-00");
+        $("#editSecretaryEmployeeCROInput").val(response.cro);
+        $("#editSecretaryEmployeePhoneInput").val(response.telefone).mask("(00) 0000-0000");
+        $("#editSecretaryEmployeeEmailInput").val(response.email);
+        $("#editSecretaryEmployeeAddressInput").val(response.endereco);
+        $("#editSecretaryEmployeeLoginInput").val(response.login);
+        $("#editSecretaryEmployeePasswordInput").val(response.senha);
 
         if (funcao == "edicao") {
-          $("#UserModal").modal("show");
-          document.getElementById("modalTitle").innerHTML = "Editar Dentista";
-          $("#UserModal input").prop("disabled", false);
+          $("#editSecretaryModal").modal("show");
+          document.getElementById("viewSecretaryModalLabel").innerHTML = "Editar Secretária";
+          $("#editSecretaryModal input").prop("disabled", false);
           document.getElementById("editNoteInput").disabled = false;
           document.getElementById("salvarAlteracoesBtn").style.display =
             "block";
         } else {
-          $("#UserModal").modal("show");
-          document.getElementById("modalTitle").innerHTML =
-            "Visualizar Cliente";
-          $("#UserModal input").prop("disabled", true);
+          $("#editSecretaryModal").modal("show");
+          document.getElementById("viewSecretaryModalLabel").innerHTML =
+            "Visualizar Secretária";
+          $("#editSecretaryModal input").prop("disabled", true);
           document.getElementById("editNoteInput").disabled = true;
           document.getElementById("salvarAlteracoesBtn").style.display = "none";
         }
@@ -277,11 +281,137 @@ function getEmployeeDetails(employeeId, funcao = "") {
       console.log("response", response);
       // Conficional para verificar o tipo de ação na modal
 
-      //updateUser(employeeId);
+      if (response.cargo === 'dentista') {
+        updateDentist(employeeId); 
+      } else if (response.cargo === 'administrador') {
+        updateAdm(employeeId);
+      } else {
+        updateSecretary(employeeId);
+      }
     },
     error: function (xhr, status, error) {
       console.log(error);
     },
+  });
+}
+
+function updateDentist(employeeId) {
+  console.log("update", employeeId);
+  $("#editDentistForm").submit(function (e) {
+    e.preventDefault();
+
+    var form = $(this);
+    var formData = $(this).serializeArray();
+
+    console.log("form", form);
+    console.log("formData", formData);
+    formData.push({
+      name: "id",
+      value: employeeId,
+    });
+
+    $.ajax({
+      url: "index.php?a=updateDentist&c=e",
+      method: "POST",
+      data: formData,
+      dataType: "json",
+      success: function (response) {
+        Swal.fire({
+          title: "Alterado!",
+          text: "Dentista atualizado com sucesso",
+          icon: "success",
+          timer: 1000,
+        }).then((result) => {
+          location.reload();
+        });
+
+        $("#editDentistModal").modal("hide");
+      },
+
+      error: function (xhr, status, error) {
+        console.error(error);
+      },
+    });
+  });
+}
+
+function updateAdm(employeeId) {
+  console.log("update", employeeId);
+  $("#editAdmForm").submit(function (e) {
+    e.preventDefault();
+
+    var form = $(this);
+    var formData = $(this).serializeArray();
+
+    console.log("form", form);
+    console.log("formData", formData);
+    formData.push({
+      name: "id",
+      value: employeeId,
+    });
+
+    $.ajax({
+      url: "index.php?a=updateAdm&c=e",
+      method: "POST",
+      data: formData,
+      dataType: "json",
+      success: function (response) {
+        Swal.fire({
+          title: "Alterado!",
+          text: "Administrador atualizado com sucesso",
+          icon: "success",
+          timer: 1000,
+        }).then((result) => {
+          location.reload();
+        });
+
+        $("#editAdmModal").modal("hide");
+      },
+
+      error: function (xhr, status, error) {
+        console.error(error);
+      },
+    });
+  });
+}
+
+function updateSecretary(employeeId) {
+  console.log("update", employeeId);
+  $("#editSecretaryForm").submit(function (e) {
+    e.preventDefault();
+
+    var form = $(this);
+    var formData = $(this).serializeArray();
+
+    console.log("form", form);
+    console.log("formData", formData);
+    formData.push({
+      name: "id",
+      value: employeeId,
+    });
+
+    $.ajax({
+      url: "index.php?a=updateSecretary&c=e",
+      method: "POST",
+      data: formData,
+      dataType: "json",
+      success: function (response) {
+        Swal.fire({
+          title: "Alterado!",
+          text: "Secretária atualizada com sucesso",
+          icon: "success",
+          timer: 1000,
+        }).then((result) => {
+          location.reload();
+        });
+
+        $("#editSecretaryModal").modal("hide");
+      },
+
+      error: function (xhr, status, error) {
+        console.error(error);
+      },
+    });
   });
 }
 

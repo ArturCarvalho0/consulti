@@ -35,6 +35,8 @@ if (!isset($_GET['pagina'])) {
     <?php require('../src/views/includes/newAdmModal.php') ?>
     <?php require('../src/views/includes/viewUserModal.php') ?>
     <?php require('../src/views/includes/viewDentistModal.php') ?>
+    <?php require('../src/views/includes/viewAdmModal.php') ?>
+    <?php require('../src/views/includes/viewSecretaryModal.php') ?>
   </div>
   <!-- Meu arquivo JS -->
   <script src="/consulti/public/js/script.js"></script>

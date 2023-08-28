@@ -1,5 +1,5 @@
 <!-- Modal de Agendamento de horário-->
-<div class="modal fade" id="dentistModal" tabindex="-1" aria-labelledby="newDentistModal" aria-hidden="true">
+<div class="modal fade" id="editDentistModal" tabindex="-1" aria-labelledby="editDentistModal" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
-        <form id="newDentistForm" class="needs-validation" novalidate action="index.php?a=insertEmployee&c=e" method="post">
+        <form id="editDentistForm" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="editDentistEmployeeNameInput" class="form-label">Nome</label>
             <input type="text" class="form-control" id="editDentistEmployeeNameInput" name="editDentistEmployeeNameInput" placeholder="Digite o nome" required>

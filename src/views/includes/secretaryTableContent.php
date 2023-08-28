@@ -59,8 +59,8 @@ $currentPage = isset($page) ? $page : 1;
                   <td><?= $data['endereco'] ?></td>
                   <td>
                     <div class="action-btn d-flex justify-content-between ">
-                      <button class="btn btn-primary" onclick="getUserDetails(<?= $data['id'] ?>, 'visualizacao')" data-id="<?= $data['id'] ?>"><i class="fa-solid fa-eye"></i></button>
-                      <button class="btn btn-success btn-edit-user" data-id="<?= $data['id'] ?>" onclick="getUserDetails(<?= $data['id'] ?>, 'edicao')"><i class="fas fa-pencil-alt"></i></button>
+                      <button class="btn btn-primary" onclick="getEmployeeDetails(<?= $data['id'] ?>, 'visualizacao')" data-id="<?= $data['id'] ?>"><i class="fa-solid fa-eye"></i></button>
+                      <button class="btn btn-success btn-edit-user" data-id="<?= $data['id'] ?>" onclick="getEmployeeDetails(<?= $data['id'] ?>, 'edicao')"><i class="fas fa-pencil-alt"></i></button>
                       <button class="btn btn-danger" onclick="confirmDeleteEmployee(<?php echo $data['id']; ?>)"><i class="fa-solid fa-trash"></i></button>
                     </div>
                   </td>

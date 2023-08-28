@@ -83,6 +83,25 @@
       return $result;
     }
 
+    function updateEmployee($id, $nome, $nascimento, $cpf, $cro, $telefone, $email, $endereco, $cargo, $login, $senha) {
+      $sql = "UPDATE $this->table SET nome = :nome, nascimento = :nascimento, cpf = :cpf, cro = :cro, telefone = :telefone, email = :email, endereco = :endereco, cargo = :cargo, login = :login, senha = :senha WHERE id = :id";
+      $stmt = $this->connection->prepare($sql);
+      
+      $stmt->bindParam(':id', $id);
+      $stmt->bindParam(':nome', $nome);
+      $stmt->bindParam(':nascimento', $nascimento);
+      $stmt->bindParam(':cpf', $cpf);
+      $stmt->bindParam(':cro', $cro);
+      $stmt->bindParam(':telefone', $telefone);
+      $stmt->bindParam(':email', $email);
+      $stmt->bindParam(':endereco', $endereco);
+      $stmt->bindParam(':cargo', $cargo);
+      $stmt->bindParam(':login', $login);
+      $stmt->bindParam(':senha', $senha);
+    
+      $stmt->execute();
+    }
+
     function deleteEmployee($id)
     {
       $sql = "DELETE FROM $this->table WHERE id = :id";

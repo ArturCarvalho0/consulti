@@ -75,6 +75,87 @@ class employeesController
         }
     }
 
+    function updateDentist()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $id = $_POST['id'];
+            $nome = $_POST['editDentistEmployeeNameInput'];
+            $nascimento = $_POST['editDentistEmployeeDateInput'];
+            $cpf = str_replace(['.', '-', '_'], '', $_POST['editDentistEmployeeCPFInput']);
+            $cro = str_replace(['.', '-', '_'], '', $_POST['editDentistEmployeeCROInput']);
+            $telefone = str_replace(['(', '-', ')'], '', $_POST['editDentistEmployeePhoneInput']);
+            $email = $_POST['editDentistEmployeeEmailInput'];
+            $endereco = $_POST['editDentistEmployeeAddressInput'];
+            $cargo = $_POST['editDentistEmployeeCargoInput'];
+            $login = $_POST['editDentistEmployeeLoginInput'];
+            $senha = $_POST['editDentistEmployeePasswordInput'];
+
+            $this->model->updateEmployee($id, $nome, $nascimento, $cpf, $cro, $telefone, $email, $endereco, $cargo, $login, $senha);
+
+            $response = [
+                'status' => 'success',
+                'message' => 'Dentista atualizado com sucesso'
+            ];
+            echo json_encode($response);
+            exit;
+        }
+    }
+
+    function updateAdm()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $id = $_POST['id'];
+            $nome = $_POST['editAdmEmployeeNameInput'];
+            $nascimento = $_POST['editAdmEmployeeDateInput'];
+            $cpf = str_replace(['.', '-', '_'], '', $_POST['editAdmEmployeeCPFInput']);
+            $cro = str_replace(['.', '-', '_'], '', $_POST['editAdmEmployeeCROInput']);
+            $telefone = str_replace(['(', '-', ')'], '', $_POST['editAdmEmployeePhoneInput']);
+            $email = $_POST['editAdmEmployeeEmailInput'];
+            $endereco = $_POST['editAdmEmployeeAddressInput'];
+            $cargo = $_POST['editAdmEmployeeCargoInput'];
+            $login = $_POST['editAdmEmployeeLoginInput'];
+            $senha = $_POST['editAdmEmployeePasswordInput'];
+
+            $this->model->updateEmployee($id, $nome, $nascimento, $cpf, $cro, $telefone, $email, $endereco, $cargo, $login, $senha);
+
+            $response = [
+                'status' => 'success',
+                'message' => 'Administrador atualizado com sucesso'
+            ];
+            echo json_encode($response);
+            exit;
+        }
+    }
+
+    function updateSecretary()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $id = $_POST['id'];
+            $nome = $_POST['editSecretaryEmployeeNameInput'];
+            $nascimento = $_POST['editSecretaryEmployeeDateInput'];
+            $cpf = str_replace(['.', '-', '_'], '', $_POST['editSecretaryEmployeeCPFInput']);
+            $cro = str_replace(['.', '-', '_'], '', $_POST['editSecretaryEmployeeCROInput']);
+            $telefone = str_replace(['(', '-', ')'], '', $_POST['editSecretaryEmployeePhoneInput']);
+            $email = $_POST['editSecretaryEmployeeEmailInput'];
+            $endereco = $_POST['editSecretaryEmployeeAddressInput'];
+            $cargo = $_POST['editSecretaryEmployeeCargoInput'];
+            $login = $_POST['editSecretaryEmployeeLoginInput'];
+            $senha = $_POST['editSecretaryEmployeePasswordInput'];
+
+            $this->model->updateEmployee($id, $nome, $nascimento, $cpf, $cro, $telefone, $email, $endereco, $cargo, $login, $senha);
+
+            $response = [
+                'status' => 'success',
+                'message' => 'Secretária atualizada com sucesso'
+            ];
+            echo json_encode($response);
+            exit;
+        }
+    }
+
     function deleteEmployee()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
