@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 if((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha']) == true))
 {
     unset($_SESSION['login']);

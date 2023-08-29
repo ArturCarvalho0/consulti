@@ -48,11 +48,11 @@
           <i class="fa-solid fa-user"></i>
         </div>
         <div>
-          <strong>Matheus</strong><br>
+          <strong><?php echo $_SESSION['login'] ?></strong><br>
           <span class="user-role">Dentista</span>
         </div>
       </div>
-      <a href="/consulti/src/views/includes/login.php" class="text-white text-decoration-none">
+      <a href=".../../../../../../consulti/src/logout.php" class="text-white text-decoration-none">
         <div class="logout">
           <span class="logout-icon">
             <i class="fas fa-sign-out-alt"></i>
