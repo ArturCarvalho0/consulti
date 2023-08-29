@@ -167,9 +167,9 @@
             <img src="../../../public/assets/img/logo.png" alt="">
         </div>  
         <br><br>
-
+        <form action="validation.php" method="POST">
         <div class="inputBox">
-            <input type="text" name="login" id="login" class="inputUser" onblur="BuscarUsuariosPorNome()" required>
+            <input type="text" name="login" id="login" class="inputUser" required>
             <label class="labelInput" for="login"><i style="margin-right: 5px;" class="fas fa-user"></i>Usuário</label>
         </div>
         <br><br>
@@ -189,6 +189,7 @@
         <br><br><br>
         <input type="submit" name="submit" id="submit">
         <br><br>
+        </form>
         <div class="Acount">
             <p>Não Tem Uma Conta ?</p> 
             <a href="#" class="PasswordText">Inscreva-se</a>
