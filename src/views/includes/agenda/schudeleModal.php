@@ -34,10 +34,32 @@
               <label for="professionalInput" class="form-label">Profissional</label>
               <select class="form-select" id="professionalInput" name="professionalInput" required>
                 <option value="" disabled selected>Selecione um profissional</option>
-                <option value="profissional1">Dentista 1</option>
-                <option value="profissional2">Dentista 2</option>
-                <option value="profissional3">Dentista 3</option>
-                <!-- Adicione mais opções conforme necessário -->
+                <?php
+                // Conectar ao banco de dados (substitua com suas credenciais)
+                $dbHost = 'Localhost';
+                $dbUsername = 'root';
+                $dbPassword = '';
+                $dbName = 'consulti';
+                $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+                // Verificar a conexão
+                if ($conn->connect_error) {
+                    die("Falha na conexão: " . $conn->connect_error);
+                }
+
+                // Consultar dentistas
+                $sql = "SELECT id, nome FROM funcionarios WHERE cargo LIKE 'dentista'";
+                $result = $conn->query($sql);
+                print_r($result);
+
+                // Preencher a lista suspensa com os dentistas
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                }
+
+                // Fechar a conexão com o banco de dados
+                $conn->close();
+            ?>
               </select>
               <div class="invalid-feedback">
                 Por favor, selecione um profissional.
